@@ -1,0 +1,62 @@
+** Drc report for touch_strip_tactile.kicad_pcb **
+** Created on 2026-09-08T04:59:46 **
+** Report includes: Errors, Warnings **
+
+** Found 11 DRC violations **
+[copper_edge_clearance]: Board edge clearance violation (rule 'FPC tail side clearance' clearance 0.1500 mm; actual 0.0000 mm)
+    Rule: FPC tail side clearance; error
+    @(0.9800 mm, -2.7500 mm): Segment on Edge.Cuts
+    @(2.7300 mm, -3.2500 mm): Pad 1 [Touch.Zone.1] of REF** on F.Cu
+[copper_edge_clearance]: Board edge clearance violation (rule 'FPC tail side clearance' clearance 0.1500 mm; actual 0.0000 mm)
+    Rule: FPC tail side clearance; error
+    @(0.9800 mm, -2.7500 mm): Segment on Edge.Cuts
+    @(2.7300 mm, -3.7500 mm): Pad 2 [Driven.Guard] of REF** on F.Cu
+[copper_edge_clearance]: Board edge clearance violation (rule 'FPC tail side clearance' clearance 0.1500 mm; actual 0.0000 mm)
+    Rule: FPC tail side clearance; error
+    @(0.9800 mm, -2.7500 mm): Segment on Edge.Cuts
+    @(2.7300 mm, -4.2500 mm): Pad 3 [Touch.Zone.2] of REF** on F.Cu
+[copper_edge_clearance]: Board edge clearance violation (rule 'FPC tail side clearance' clearance 0.1500 mm; actual 0.0000 mm)
+    Rule: FPC tail side clearance; error
+    @(0.9800 mm, -2.7500 mm): Segment on Edge.Cuts
+    @(2.7300 mm, -4.7500 mm): Pad 4 [Driven.Guard] of REF** on F.Cu
+[copper_edge_clearance]: Board edge clearance violation (rule 'FPC tail side clearance' clearance 0.1500 mm; actual 0.0000 mm)
+    Rule: FPC tail side clearance; error
+    @(0.9800 mm, -2.7500 mm): Segment on Edge.Cuts
+    @(2.7300 mm, -5.2500 mm): Pad 5 [Touch.Zone.3] of REF** on F.Cu
+[copper_edge_clearance]: Board edge clearance violation (rule 'FPC tail side clearance' clearance 0.1500 mm; actual 0.0000 mm)
+    Rule: FPC tail side clearance; error
+    @(0.9800 mm, -2.7500 mm): Segment on Edge.Cuts
+    @(2.7300 mm, -5.7500 mm): Pad 6 [Driven.Guard] of REF** on F.Cu
+[copper_edge_clearance]: Board edge clearance violation (rule 'FPC tail side clearance' clearance 0.1500 mm; actual 0.0000 mm)
+    Rule: FPC tail side clearance; error
+    @(0.9800 mm, -2.7500 mm): Segment on Edge.Cuts
+    @(2.7300 mm, -6.2500 mm): Pad 7 [Touch.Zone.4] of REF** on F.Cu
+[copper_edge_clearance]: Board edge clearance violation (rule 'FPC tail side clearance' clearance 0.1500 mm; actual 0.0000 mm)
+    Rule: FPC tail side clearance; error
+    @(0.9800 mm, -2.7500 mm): Segment on Edge.Cuts
+    @(2.7300 mm, -6.7500 mm): Pad 8 [Driven.Guard] of REF** on F.Cu
+[invalid_outline]: Board has malformed outline (self-intersecting)
+    Local override; error
+    @(36.5157 mm, -2.7500 mm): Segment on Edge.Cuts
+    @(0.9800 mm, -2.7500 mm): Segment on Edge.Cuts
+[invalid_outline]: Board has malformed outline (self-intersecting)
+    Local override; error
+    @(36.5157 mm, -2.7500 mm): Segment on Edge.Cuts
+    @(0.9800 mm, -2.7500 mm): Segment on Edge.Cuts
+[invalid_outline]: Board has malformed outline (self-intersecting)
+    Local override; error
+    @(36.5157 mm, -2.7500 mm): Segment on Edge.Cuts
+    @(0.9800 mm, -2.7500 mm): Segment on Edge.Cuts
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** Ignored checks **
+    - Footprint has no courtyard defined
+    - Track endpoint not centered on via
+    - Tuning profile track geometries
+    - Footprint doesn't match symbol's footprint filters
+    - Footprint component type doesn't match footprint pads
+
+** End of Report **

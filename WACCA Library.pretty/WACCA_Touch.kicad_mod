@@ -1,0 +1,136 @@
+(footprint "WACCA_Touch"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(uuid "0758b71e-9da3-473b-bcb1-94f214e9e18a")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "WACCA_Touch"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "02ba7e5e-f0ec-4f6a-af76-f5eddaa35dce")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5539fbb0-bc3d-40be-8fd2-01bb723249f2")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "01252ca0-1e66-47ec-94c5-bb33a02c4219")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(duplicate_pad_numbers_are_jumpers no)
+	(pad "1" thru_hole custom
+		(at 12.499502 -26.15)
+		(size 0.7 0.7)
+		(drill 0.3)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(options
+			(clearance outline)
+			(anchor circle)
+		)
+		(primitives
+			(gr_poly
+				(pts
+					(xy -26.449502 -1.5) (xy 1.450497 -1.5) (xy 3.275497 53.8) (xy -28.274502 53.8)
+				)
+				(width 0)
+				(fill yes)
+			)
+		)
+		(uuid "1483a8ed-949e-4596-945c-145fb5ddd743")
+	)
+	(pad "2" thru_hole custom
+		(at 14.324502 31.65)
+		(size 0.7 0.7)
+		(drill 0.3)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(options
+			(clearance outline)
+			(anchor circle)
+		)
+		(primitives
+			(gr_poly
+				(pts
+					(xy -30.099502 -1.5) (xy 1.450497 -1.5) (xy 3.275497 53.8) (xy -31.924502 53.8)
+				)
+				(width 0)
+				(fill yes)
+			)
+		)
+		(uuid "ef132b51-13dd-414f-b80a-d9bca9d0b221")
+	)
+	(pad "3" thru_hole custom
+		(at 16.149502 89.449999)
+		(size 0.7 0.7)
+		(drill 0.3)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(options
+			(clearance outline)
+			(anchor circle)
+		)
+		(primitives
+			(gr_poly
+				(pts
+					(xy -33.749502 -1.5) (xy 1.450497 -1.5) (xy 3.275497 53.8) (xy -35.574502 53.8)
+				)
+				(width 0)
+				(fill yes)
+			)
+		)
+		(uuid "8da9381b-fe2f-4c56-a083-f924ac3daf6a")
+	)
+	(pad "4" thru_hole custom
+		(at 17.974502 147.249999)
+		(size 0.7 0.7)
+		(drill 0.3)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(options
+			(clearance outline)
+			(anchor circle)
+		)
+		(primitives
+			(gr_poly
+				(pts
+					(xy -37.399502 -1.5) (xy 1.450497 -1.5) (xy 3.275497 53.8) (xy -39.224502 53.8)
+				)
+				(width 0)
+				(fill yes)
+			)
+		)
+		(uuid "325b21e7-97a8-45c9-9ffc-8affaea323f7")
+	)
+	(embedded_fonts no)
+)

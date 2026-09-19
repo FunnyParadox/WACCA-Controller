@@ -1,0 +1,16 @@
+(version 1)
+
+(rule "FPC finger clearance"
+    (condition "A.intersectsArea('FPC_TAIL') && B.intersectsArea('FPC_TAIL')")
+    (constraint clearance (min 0.15mm))
+)
+
+(rule "FPC tail side clearance"
+    (condition "A.intersectsArea('FPC_TAIL')")
+    (constraint edge_clearance (min 0.15mm))
+)
+
+(rule "FPC contact tip"
+    (condition "A.intersectsArea('FPC_TIP')")
+    (constraint edge_clearance (min 0mm))
+)

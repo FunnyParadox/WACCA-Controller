@@ -1,0 +1,23 @@
+%TF.GenerationSoftware,KiCad,Pcbnew,10.0.6*%
+%TF.CreationDate,2026-09-07T05:06:44+02:00*%
+%TF.ProjectId,touch_strip_controller,746f7563-685f-4737-9472-69705f636f6e,rev?*%
+%TF.SameCoordinates,Original*%
+%TF.FileFunction,Profile,NP*%
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW 10.0.6) date 2026-09-07 05:06:44*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+%TA.AperFunction,Profile*%
+%ADD10C,0.050000*%
+%TD*%
+G04 APERTURE END LIST*
+D10*
+X-11250000Y1250000D02*
+X11250000Y1250000D01*
+X11250000Y-58750000D01*
+X-11250000Y-58750000D01*
+X-11250000Y1250000D01*
+M02*

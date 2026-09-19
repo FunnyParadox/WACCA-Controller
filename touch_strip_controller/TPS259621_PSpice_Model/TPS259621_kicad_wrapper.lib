@@ -1,0 +1,8 @@
+* KiCad wrapper for TI TPS259621 transient PSpice model
+* Keep this file in the same folder as TPS259621_trans.lib
+
+.include "TPS259621_trans.lib"
+
+.SUBCKT TPS259621_KICAD GND dVdT UVLO IN OUT FLT_N ILIM OVLO_OVCSEL
+XU1 GND dVdT UVLO IN OUT FLT_N ILIM OVLO_OVCSEL TPS259621_TRANS Cdvdt=10n
+.ENDS TPS259621_KICAD
