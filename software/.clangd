@@ -1,0 +1,19 @@
+# Editor support for the real firmware build, with Clang's RISC-V target.
+If:
+  PathMatch: (firmware|vendor/wch)/.*
+CompileFlags:
+  CompilationDatabase: build/firmware
+  Add:
+    - --target=riscv32-unknown-elf
+    - -isystem../../.tools/risc-none-embed-gcc-8.2.0/riscv-none-embed/include
+---
+If:
+  PathMatch: (host|tests)/.*
+CompileFlags:
+  CompilationDatabase: build/host
+---
+# WCH's compiler validates this hardware interrupt attribute; Clang does not support it.
+If:
+  PathMatch: firmware/ch32v203/usb_device\.c
+CompileFlags:
+  Add: [-Wno-ignored-attributes]

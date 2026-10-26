@@ -1,0 +1,1370 @@
+{
+  "checked_on": "2026-10-25",
+  "source_sha256": {
+    "main_board.kicad_sch": "8300b7ac8174867daeb59913e0b9ed2ca0a1234487c23f81aa290534a9b063d6",
+    "main_board.kicad_pcb": "12379a79f0abaeea40302b45e6f0f80d70bfc142f5b27ee292c734a69f02ca2c",
+    "sector_board.kicad_sch": "821ce367c0247c949b3698eeca998e7ed2e828f9094a8de3051b476806c8ab35",
+    "led_board.kicad_sch": "9df1498585912699614b4eff7e73b329a703402ee3f78888ad56dcf6a145826e"
+  },
+  "main_mcu_pins": {
+    "MCU:1": {
+      "23": {
+        "ref": "MCU:1",
+        "pin": "23",
+        "pinfunction": "VSS_23",
+        "pintype": "power_in",
+        "net": "/GND"
+      },
+      "35": {
+        "ref": "MCU:1",
+        "pin": "35",
+        "pinfunction": "VSS_35",
+        "pintype": "passive",
+        "net": "/GND"
+      },
+      "47": {
+        "ref": "MCU:1",
+        "pin": "47",
+        "pinfunction": "VSS_47",
+        "pintype": "passive",
+        "net": "/GND"
+      },
+      "8": {
+        "ref": "MCU:1",
+        "pin": "8",
+        "pinfunction": "VSSA_8",
+        "pintype": "power_in",
+        "net": "/GND"
+      },
+      "10": {
+        "ref": "MCU:1",
+        "pin": "10",
+        "pinfunction": "PA0_10",
+        "pintype": "bidirectional",
+        "net": "/TOUCH_IRQ_S1"
+      },
+      "11": {
+        "ref": "MCU:1",
+        "pin": "11",
+        "pinfunction": "PA1_11",
+        "pintype": "bidirectional",
+        "net": "/TOUCH_IRQ_S2"
+      },
+      "12": {
+        "ref": "MCU:1",
+        "pin": "12",
+        "pinfunction": "PA2_12",
+        "pintype": "bidirectional",
+        "net": "/TOUCH_IRQ_S3"
+      },
+      "13": {
+        "ref": "MCU:1",
+        "pin": "13",
+        "pinfunction": "PA3_13",
+        "pintype": "bidirectional",
+        "net": "/TOUCH_IRQ_S4"
+      },
+      "14": {
+        "ref": "MCU:1",
+        "pin": "14",
+        "pinfunction": "PA4_14",
+        "pintype": "bidirectional",
+        "net": "/TOUCH_IRQ_S5"
+      },
+      "15": {
+        "ref": "MCU:1",
+        "pin": "15",
+        "pinfunction": "PA5_15",
+        "pintype": "bidirectional",
+        "net": "/TOUCH_IRQ_S6"
+      },
+      "39": {
+        "ref": "MCU:1",
+        "pin": "39",
+        "pinfunction": "PB3_39",
+        "pintype": "bidirectional",
+        "net": "/TOUCH_IRQ_S7"
+      },
+      "40": {
+        "ref": "MCU:1",
+        "pin": "40",
+        "pinfunction": "PB4_40",
+        "pintype": "bidirectional",
+        "net": "/TOUCH_IRQ_S8"
+      },
+      "41": {
+        "ref": "MCU:1",
+        "pin": "41",
+        "pinfunction": "PB5_41",
+        "pintype": "bidirectional",
+        "net": "/TOUCH_IRQ_S9"
+      },
+      "42": {
+        "ref": "MCU:1",
+        "pin": "42",
+        "pinfunction": "PB6_42",
+        "pintype": "bidirectional",
+        "net": "/TOUCH_IRQ_S10"
+      },
+      "43": {
+        "ref": "MCU:1",
+        "pin": "43",
+        "pinfunction": "PB7_43",
+        "pintype": "bidirectional",
+        "net": "/TOUCH_IRQ_S11"
+      },
+      "45": {
+        "ref": "MCU:1",
+        "pin": "45",
+        "pinfunction": "PB8_45",
+        "pintype": "bidirectional",
+        "net": "/TOUCH_IRQ_S12"
+      },
+      "46": {
+        "ref": "MCU:1",
+        "pin": "46",
+        "pinfunction": "PB9_46",
+        "pintype": "bidirectional",
+        "net": "/TOUCH_MCU_GPIO"
+      },
+      "21": {
+        "ref": "MCU:1",
+        "pin": "21",
+        "pinfunction": "I2C2_SCL_21",
+        "pintype": "bidirectional",
+        "net": "/TOUCH_MCU_SCL"
+      },
+      "22": {
+        "ref": "MCU:1",
+        "pin": "22",
+        "pinfunction": "I2C2_SDA_22",
+        "pintype": "bidirectional",
+        "net": "/TOUCH_MCU_SDA"
+      },
+      "32": {
+        "ref": "MCU:1",
+        "pin": "32",
+        "pinfunction": "USBDM_32",
+        "pintype": "bidirectional",
+        "net": "/TOUCH_USB_DN"
+      },
+      "33": {
+        "ref": "MCU:1",
+        "pin": "33",
+        "pinfunction": "USBDP_33",
+        "pintype": "bidirectional",
+        "net": "/TOUCH_USB_DP"
+      },
+      "1": {
+        "ref": "MCU:1",
+        "pin": "1",
+        "pinfunction": "VBAT_1",
+        "pintype": "power_in",
+        "net": "/USB_3.3V"
+      },
+      "24": {
+        "ref": "MCU:1",
+        "pin": "24",
+        "pinfunction": "VDD_VIO_24",
+        "pintype": "power_in",
+        "net": "/USB_3.3V"
+      },
+      "36": {
+        "ref": "MCU:1",
+        "pin": "36",
+        "pinfunction": "VDD_36",
+        "pintype": "power_in",
+        "net": "/USB_3.3V"
+      },
+      "48": {
+        "ref": "MCU:1",
+        "pin": "48",
+        "pinfunction": "VDD_48",
+        "pintype": "power_in",
+        "net": "/USB_3.3V"
+      },
+      "9": {
+        "ref": "MCU:1",
+        "pin": "9",
+        "pinfunction": "VDDA_9",
+        "pintype": "power_in",
+        "net": "/USB_3.3V"
+      },
+      "44": {
+        "ref": "MCU:1",
+        "pin": "44",
+        "pinfunction": "BOOT0_44",
+        "pintype": "input",
+        "net": "Net-(MCU:1-BOOT0)"
+      },
+      "5": {
+        "ref": "MCU:1",
+        "pin": "5",
+        "pinfunction": "OSC_IN_5",
+        "pintype": "bidirectional",
+        "net": "Net-(MCU:1-OSC_IN)"
+      },
+      "6": {
+        "ref": "MCU:1",
+        "pin": "6",
+        "pinfunction": "OSC_OUT_6",
+        "pintype": "bidirectional",
+        "net": "Net-(MCU:1-OSC_OUT)"
+      },
+      "20": {
+        "ref": "MCU:1",
+        "pin": "20",
+        "pinfunction": "BOOT1_20",
+        "pintype": "bidirectional",
+        "net": "Net-(MCU:1-PB2)"
+      },
+      "37": {
+        "ref": "MCU:1",
+        "pin": "37",
+        "pinfunction": "SWCLK_37",
+        "pintype": "bidirectional",
+        "net": "Net-(MCU:1-SWCLK)"
+      },
+      "34": {
+        "ref": "MCU:1",
+        "pin": "34",
+        "pinfunction": "SWDIO_34",
+        "pintype": "bidirectional",
+        "net": "Net-(MCU:1-SWDIO)"
+      },
+      "7": {
+        "ref": "MCU:1",
+        "pin": "7",
+        "pinfunction": "~{RST}_7",
+        "pintype": "input",
+        "net": "Net-(MCU:1-~{RST})"
+      },
+      "16": {
+        "ref": "MCU:1",
+        "pin": "16",
+        "pinfunction": "PA6_16",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:1-PA6-Pad16)"
+      },
+      "17": {
+        "ref": "MCU:1",
+        "pin": "17",
+        "pinfunction": "PA7_17",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:1-PA7-Pad17)"
+      },
+      "29": {
+        "ref": "MCU:1",
+        "pin": "29",
+        "pinfunction": "PA8_29",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:1-PA8-Pad29)"
+      },
+      "30": {
+        "ref": "MCU:1",
+        "pin": "30",
+        "pinfunction": "PA9_30",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:1-PA9-Pad30)"
+      },
+      "31": {
+        "ref": "MCU:1",
+        "pin": "31",
+        "pinfunction": "PA10_31",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:1-PA10-Pad31)"
+      },
+      "38": {
+        "ref": "MCU:1",
+        "pin": "38",
+        "pinfunction": "PA15_38",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:1-PA15-Pad38)"
+      },
+      "18": {
+        "ref": "MCU:1",
+        "pin": "18",
+        "pinfunction": "PB0_18",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:1-PB0-Pad18)"
+      },
+      "19": {
+        "ref": "MCU:1",
+        "pin": "19",
+        "pinfunction": "PB1_19",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:1-PB1-Pad19)"
+      },
+      "25": {
+        "ref": "MCU:1",
+        "pin": "25",
+        "pinfunction": "PB12_25",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:1-PB12-Pad25)"
+      },
+      "26": {
+        "ref": "MCU:1",
+        "pin": "26",
+        "pinfunction": "PB13_26",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:1-PB13-Pad26)"
+      },
+      "27": {
+        "ref": "MCU:1",
+        "pin": "27",
+        "pinfunction": "PB14_27",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:1-PB14-Pad27)"
+      },
+      "28": {
+        "ref": "MCU:1",
+        "pin": "28",
+        "pinfunction": "PB15_28",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:1-PB15-Pad28)"
+      },
+      "2": {
+        "ref": "MCU:1",
+        "pin": "2",
+        "pinfunction": "PC13_2",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:1-PC13-Pad2)"
+      },
+      "3": {
+        "ref": "MCU:1",
+        "pin": "3",
+        "pinfunction": "PC14_3",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:1-PC14-Pad3)"
+      },
+      "4": {
+        "ref": "MCU:1",
+        "pin": "4",
+        "pinfunction": "PC15_4",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:1-PC15-Pad4)"
+      }
+    },
+    "MCU:2": {
+      "23": {
+        "ref": "MCU:2",
+        "pin": "23",
+        "pinfunction": "VSS_23",
+        "pintype": "power_in",
+        "net": "/GND"
+      },
+      "35": {
+        "ref": "MCU:2",
+        "pin": "35",
+        "pinfunction": "VSS_35",
+        "pintype": "passive",
+        "net": "/GND"
+      },
+      "47": {
+        "ref": "MCU:2",
+        "pin": "47",
+        "pinfunction": "VSS_47",
+        "pintype": "passive",
+        "net": "/GND"
+      },
+      "8": {
+        "ref": "MCU:2",
+        "pin": "8",
+        "pinfunction": "VSSA_8",
+        "pintype": "power_in",
+        "net": "/GND"
+      },
+      "14": {
+        "ref": "MCU:2",
+        "pin": "14",
+        "pinfunction": "PA4_14",
+        "pintype": "bidirectional",
+        "net": "/LED_GPIO_S1"
+      },
+      "15": {
+        "ref": "MCU:2",
+        "pin": "15",
+        "pinfunction": "PA5_15",
+        "pintype": "bidirectional",
+        "net": "/LED_GPIO_S2"
+      },
+      "16": {
+        "ref": "MCU:2",
+        "pin": "16",
+        "pinfunction": "PA6_16",
+        "pintype": "bidirectional",
+        "net": "/LED_GPIO_S3"
+      },
+      "17": {
+        "ref": "MCU:2",
+        "pin": "17",
+        "pinfunction": "PA7_17",
+        "pintype": "bidirectional",
+        "net": "/LED_GPIO_S4"
+      },
+      "18": {
+        "ref": "MCU:2",
+        "pin": "18",
+        "pinfunction": "PB0_18",
+        "pintype": "bidirectional",
+        "net": "/LED_GPIO_S5"
+      },
+      "19": {
+        "ref": "MCU:2",
+        "pin": "19",
+        "pinfunction": "PB1_19",
+        "pintype": "bidirectional",
+        "net": "/LED_GPIO_S6"
+      },
+      "43": {
+        "ref": "MCU:2",
+        "pin": "43",
+        "pinfunction": "PB7_43",
+        "pintype": "bidirectional",
+        "net": "/LED_GPIO_S7"
+      },
+      "42": {
+        "ref": "MCU:2",
+        "pin": "42",
+        "pinfunction": "PB6_42",
+        "pintype": "bidirectional",
+        "net": "/LED_GPIO_S8"
+      },
+      "41": {
+        "ref": "MCU:2",
+        "pin": "41",
+        "pinfunction": "PB5_41",
+        "pintype": "bidirectional",
+        "net": "/LED_GPIO_S9"
+      },
+      "40": {
+        "ref": "MCU:2",
+        "pin": "40",
+        "pinfunction": "PB4_40",
+        "pintype": "bidirectional",
+        "net": "/LED_GPIO_S10"
+      },
+      "39": {
+        "ref": "MCU:2",
+        "pin": "39",
+        "pinfunction": "PB3_39",
+        "pintype": "bidirectional",
+        "net": "/LED_GPIO_S11"
+      },
+      "38": {
+        "ref": "MCU:2",
+        "pin": "38",
+        "pinfunction": "PA15_38",
+        "pintype": "bidirectional",
+        "net": "/LED_GPIO_S12"
+      },
+      "21": {
+        "ref": "MCU:2",
+        "pin": "21",
+        "pinfunction": "I2C2_SCL_21",
+        "pintype": "bidirectional",
+        "net": "/LED_MCU_SCL"
+      },
+      "22": {
+        "ref": "MCU:2",
+        "pin": "22",
+        "pinfunction": "I2C2_SDA_22",
+        "pintype": "bidirectional",
+        "net": "/LED_MCU_SDA"
+      },
+      "32": {
+        "ref": "MCU:2",
+        "pin": "32",
+        "pinfunction": "USBDM_32",
+        "pintype": "bidirectional",
+        "net": "/LED_USB_DN"
+      },
+      "33": {
+        "ref": "MCU:2",
+        "pin": "33",
+        "pinfunction": "USBDP_33",
+        "pintype": "bidirectional",
+        "net": "/LED_USB_DP"
+      },
+      "1": {
+        "ref": "MCU:2",
+        "pin": "1",
+        "pinfunction": "VBAT_1",
+        "pintype": "power_in",
+        "net": "/USB_3.3V"
+      },
+      "24": {
+        "ref": "MCU:2",
+        "pin": "24",
+        "pinfunction": "VDD_VIO_24",
+        "pintype": "power_in",
+        "net": "/USB_3.3V"
+      },
+      "36": {
+        "ref": "MCU:2",
+        "pin": "36",
+        "pinfunction": "VDD_36",
+        "pintype": "power_in",
+        "net": "/USB_3.3V"
+      },
+      "48": {
+        "ref": "MCU:2",
+        "pin": "48",
+        "pinfunction": "VDD_48",
+        "pintype": "power_in",
+        "net": "/USB_3.3V"
+      },
+      "9": {
+        "ref": "MCU:2",
+        "pin": "9",
+        "pinfunction": "VDDA_9",
+        "pintype": "power_in",
+        "net": "/USB_3.3V"
+      },
+      "44": {
+        "ref": "MCU:2",
+        "pin": "44",
+        "pinfunction": "BOOT0_44",
+        "pintype": "input",
+        "net": "Net-(MCU:2-BOOT0)"
+      },
+      "5": {
+        "ref": "MCU:2",
+        "pin": "5",
+        "pinfunction": "OSC_IN_5",
+        "pintype": "bidirectional",
+        "net": "Net-(MCU:2-OSC_IN)"
+      },
+      "6": {
+        "ref": "MCU:2",
+        "pin": "6",
+        "pinfunction": "OSC_OUT_6",
+        "pintype": "bidirectional",
+        "net": "Net-(MCU:2-OSC_OUT)"
+      },
+      "13": {
+        "ref": "MCU:2",
+        "pin": "13",
+        "pinfunction": "ADC_IN3_13",
+        "pintype": "bidirectional",
+        "net": "Net-(MCU:2-PA3)"
+      },
+      "20": {
+        "ref": "MCU:2",
+        "pin": "20",
+        "pinfunction": "BOOT1_20",
+        "pintype": "bidirectional",
+        "net": "Net-(MCU:2-PB2)"
+      },
+      "37": {
+        "ref": "MCU:2",
+        "pin": "37",
+        "pinfunction": "SWCLK_37",
+        "pintype": "bidirectional",
+        "net": "Net-(MCU:2-SWCLK)"
+      },
+      "34": {
+        "ref": "MCU:2",
+        "pin": "34",
+        "pinfunction": "SWDIO_34",
+        "pintype": "bidirectional",
+        "net": "Net-(MCU:2-SWDIO)"
+      },
+      "7": {
+        "ref": "MCU:2",
+        "pin": "7",
+        "pinfunction": "~{RST}_7",
+        "pintype": "input",
+        "net": "Net-(MCU:2-~{RST})"
+      },
+      "10": {
+        "ref": "MCU:2",
+        "pin": "10",
+        "pinfunction": "PA0_10",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:2-PA0-Pad10)"
+      },
+      "11": {
+        "ref": "MCU:2",
+        "pin": "11",
+        "pinfunction": "PA1_11",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:2-PA1-Pad11)"
+      },
+      "12": {
+        "ref": "MCU:2",
+        "pin": "12",
+        "pinfunction": "PA2_12",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:2-PA2-Pad12)"
+      },
+      "29": {
+        "ref": "MCU:2",
+        "pin": "29",
+        "pinfunction": "PA8_29",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:2-PA8-Pad29)"
+      },
+      "30": {
+        "ref": "MCU:2",
+        "pin": "30",
+        "pinfunction": "PA9_30",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:2-PA9-Pad30)"
+      },
+      "31": {
+        "ref": "MCU:2",
+        "pin": "31",
+        "pinfunction": "PA10_31",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:2-PA10-Pad31)"
+      },
+      "45": {
+        "ref": "MCU:2",
+        "pin": "45",
+        "pinfunction": "PB8_45",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:2-PB8-Pad45)"
+      },
+      "46": {
+        "ref": "MCU:2",
+        "pin": "46",
+        "pinfunction": "PB9_46",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:2-PB9-Pad46)"
+      },
+      "25": {
+        "ref": "MCU:2",
+        "pin": "25",
+        "pinfunction": "PB12_25",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:2-PB12-Pad25)"
+      },
+      "26": {
+        "ref": "MCU:2",
+        "pin": "26",
+        "pinfunction": "PB13_26",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:2-PB13-Pad26)"
+      },
+      "27": {
+        "ref": "MCU:2",
+        "pin": "27",
+        "pinfunction": "PB14_27",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:2-PB14-Pad27)"
+      },
+      "28": {
+        "ref": "MCU:2",
+        "pin": "28",
+        "pinfunction": "PB15_28",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:2-PB15-Pad28)"
+      },
+      "2": {
+        "ref": "MCU:2",
+        "pin": "2",
+        "pinfunction": "PC13_2",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:2-PC13-Pad2)"
+      },
+      "3": {
+        "ref": "MCU:2",
+        "pin": "3",
+        "pinfunction": "PC14_3",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:2-PC14-Pad3)"
+      },
+      "4": {
+        "ref": "MCU:2",
+        "pin": "4",
+        "pinfunction": "PC15_4",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(MCU:2-PC15-Pad4)"
+      }
+    },
+    "USB:HUB1": {
+      "25": {
+        "ref": "USB:HUB1",
+        "pin": "25",
+        "pinfunction": "VSS(EP)_25",
+        "pintype": "power_in",
+        "net": "/GND"
+      },
+      "5": {
+        "ref": "USB:HUB1",
+        "pin": "5",
+        "pinfunction": "USBDP_DN2_5",
+        "pintype": "bidirectional",
+        "net": "/LED_USB_DN"
+      },
+      "4": {
+        "ref": "USB:HUB1",
+        "pin": "4",
+        "pinfunction": "USBDM_DN2_4",
+        "pintype": "bidirectional",
+        "net": "/LED_USB_DP"
+      },
+      "15": {
+        "ref": "USB:HUB1",
+        "pin": "15",
+        "pinfunction": "RESET_N_15",
+        "pintype": "input",
+        "net": "/TOUCH_MCU_GPIO"
+      },
+      "14": {
+        "ref": "USB:HUB1",
+        "pin": "14",
+        "pinfunction": "SMBCLK_14",
+        "pintype": "bidirectional",
+        "net": "/TOUCH_MCU_SCL"
+      },
+      "13": {
+        "ref": "USB:HUB1",
+        "pin": "13",
+        "pinfunction": "SMBDATA_13",
+        "pintype": "bidirectional",
+        "net": "/TOUCH_MCU_SDA"
+      },
+      "3": {
+        "ref": "USB:HUB1",
+        "pin": "3",
+        "pinfunction": "USBDP_DN1_3",
+        "pintype": "bidirectional",
+        "net": "/TOUCH_USB_DN"
+      },
+      "2": {
+        "ref": "USB:HUB1",
+        "pin": "2",
+        "pinfunction": "USBDM_DN1_2",
+        "pintype": "bidirectional",
+        "net": "/TOUCH_USB_DP"
+      },
+      "1": {
+        "ref": "USB:HUB1",
+        "pin": "1",
+        "pinfunction": "VDD33_1",
+        "pintype": "power_in",
+        "net": "/USB_3.3V"
+      },
+      "18": {
+        "ref": "USB:HUB1",
+        "pin": "18",
+        "pinfunction": "VDD33_18",
+        "pintype": "power_in",
+        "net": "/USB_3.3V"
+      },
+      "9": {
+        "ref": "USB:HUB1",
+        "pin": "9",
+        "pinfunction": "VDD33_9",
+        "pintype": "power_in",
+        "net": "/USB_3.3V"
+      },
+      "20": {
+        "ref": "USB:HUB1",
+        "pin": "20",
+        "pinfunction": "USBDP_UP_20",
+        "pintype": "bidirectional",
+        "net": "/USB_UP_D+"
+      },
+      "19": {
+        "ref": "USB:HUB1",
+        "pin": "19",
+        "pinfunction": "USBDM_UP_19",
+        "pintype": "bidirectional",
+        "net": "/USB_UP_D-"
+      },
+      "10": {
+        "ref": "USB:HUB1",
+        "pin": "10",
+        "pinfunction": "CRFILT_10",
+        "pintype": "passive",
+        "net": "Net-(USB:HUB1-CRFILT)"
+      },
+      "23": {
+        "ref": "USB:HUB1",
+        "pin": "23",
+        "pinfunction": "PLLFILT_23",
+        "pintype": "passive",
+        "net": "Net-(USB:HUB1-PLLFILT)"
+      },
+      "24": {
+        "ref": "USB:HUB1",
+        "pin": "24",
+        "pinfunction": "RBIAS_24",
+        "pintype": "passive",
+        "net": "Net-(USB:HUB1-RBIAS)"
+      },
+      "16": {
+        "ref": "USB:HUB1",
+        "pin": "16",
+        "pinfunction": "VBUS_DET_16",
+        "pintype": "input",
+        "net": "Net-(USB:HUB1-VBUS_DET)"
+      },
+      "22": {
+        "ref": "USB:HUB1",
+        "pin": "22",
+        "pinfunction": "XTALIN_22",
+        "pintype": "input",
+        "net": "Net-(USB:HUB1-XTALIN)"
+      },
+      "21": {
+        "ref": "USB:HUB1",
+        "pin": "21",
+        "pinfunction": "XTALOUT_21",
+        "pintype": "output",
+        "net": "Net-(USB:HUB1-XTALOUT)"
+      },
+      "6": {
+        "ref": "USB:HUB1",
+        "pin": "6",
+        "pinfunction": "NC_6",
+        "pintype": "no_connect",
+        "net": "unconnected-(USB:HUB1-NC-Pad6)"
+      },
+      "8": {
+        "ref": "USB:HUB1",
+        "pin": "8",
+        "pinfunction": "OCS1_N_8",
+        "pintype": "input+no_connect",
+        "net": "unconnected-(USB:HUB1-OCS1_N-Pad8)"
+      },
+      "12": {
+        "ref": "USB:HUB1",
+        "pin": "12",
+        "pinfunction": "OCS2_N_12",
+        "pintype": "input+no_connect",
+        "net": "unconnected-(USB:HUB1-OCS2_N-Pad12)"
+      },
+      "7": {
+        "ref": "USB:HUB1",
+        "pin": "7",
+        "pinfunction": "PRTPWR1_7",
+        "pintype": "output+no_connect",
+        "net": "unconnected-(USB:HUB1-PRTPWR1-Pad7)"
+      },
+      "11": {
+        "ref": "USB:HUB1",
+        "pin": "11",
+        "pinfunction": "PRTPWR2_11",
+        "pintype": "output+no_connect",
+        "net": "unconnected-(USB:HUB1-PRTPWR2-Pad11)"
+      },
+      "17": {
+        "ref": "USB:HUB1",
+        "pin": "17",
+        "pinfunction": "SUSP_IND_17",
+        "pintype": "bidirectional+no_connect",
+        "net": "unconnected-(USB:HUB1-SUSP_IND-Pad17)"
+      }
+    }
+  },
+  "sector_mcu_pins": {
+    "31": {
+      "ref": "TDC1",
+      "pin": "31",
+      "pinfunction": "DVSS_31",
+      "pintype": "power_in",
+      "net": "/GND"
+    },
+    "33": {
+      "ref": "TDC1",
+      "pin": "33",
+      "pinfunction": "EP_33",
+      "pintype": "power_in",
+      "net": "/GND"
+    },
+    "7": {
+      "ref": "TDC1",
+      "pin": "7",
+      "pinfunction": "P1.0_7",
+      "pintype": "bidirectional",
+      "net": "/TOUCH_IRQ_S"
+    },
+    "10": {
+      "ref": "TDC1",
+      "pin": "10",
+      "pinfunction": "UCB0SCL_10",
+      "pintype": "bidirectional",
+      "net": "/TOUCH_MCU_SCL"
+    },
+    "9": {
+      "ref": "TDC1",
+      "pin": "9",
+      "pinfunction": "UCB0SDA_9",
+      "pintype": "bidirectional",
+      "net": "/TOUCH_MCU_SDA"
+    },
+    "32": {
+      "ref": "TDC1",
+      "pin": "32",
+      "pinfunction": "DVCC_32",
+      "pintype": "power_in",
+      "net": "/USB_3.3V"
+    },
+    "8": {
+      "ref": "TDC1",
+      "pin": "8",
+      "pinfunction": "A1_8",
+      "pintype": "input",
+      "net": "Net-(TDC1-P1.1)"
+    },
+    "17": {
+      "ref": "TDC1",
+      "pin": "17",
+      "pinfunction": "CAP1.1_17",
+      "pintype": "bidirectional",
+      "net": "Net-(TDC1-P2.4)"
+    },
+    "25": {
+      "ref": "TDC1",
+      "pin": "25",
+      "pinfunction": "CAP3.0_25",
+      "pintype": "bidirectional",
+      "net": "Net-(TDC1-P2.7)"
+    },
+    "12": {
+      "ref": "TDC1",
+      "pin": "12",
+      "pinfunction": "CAP0.0_12",
+      "pintype": "bidirectional",
+      "net": "Net-(TDC1-P3.0)"
+    },
+    "16": {
+      "ref": "TDC1",
+      "pin": "16",
+      "pinfunction": "CAP1.0_16",
+      "pintype": "bidirectional",
+      "net": "Net-(TDC1-P3.1)"
+    },
+    "27": {
+      "ref": "TDC1",
+      "pin": "27",
+      "pinfunction": "CAP3.2_27",
+      "pintype": "bidirectional",
+      "net": "Net-(TDC1-P3.2)"
+    },
+    "13": {
+      "ref": "TDC1",
+      "pin": "13",
+      "pinfunction": "CAP0.1_13",
+      "pintype": "bidirectional",
+      "net": "Net-(TDC1-P3.3)"
+    },
+    "28": {
+      "ref": "TDC1",
+      "pin": "28",
+      "pinfunction": "CAP3.3_28",
+      "pintype": "bidirectional",
+      "net": "Net-(TDC1-P3.6)"
+    },
+    "21": {
+      "ref": "TDC1",
+      "pin": "21",
+      "pinfunction": "CAP2.0_21",
+      "pintype": "bidirectional",
+      "net": "Net-(TDC1-P3.7)"
+    },
+    "22": {
+      "ref": "TDC1",
+      "pin": "22",
+      "pinfunction": "CAP2.1_22",
+      "pintype": "bidirectional",
+      "net": "Net-(TDC1-P4.0)"
+    },
+    "2": {
+      "ref": "TDC1",
+      "pin": "2",
+      "pinfunction": "TEST_2",
+      "pintype": "input",
+      "net": "Net-(TDC1-TEST)"
+    },
+    "20": {
+      "ref": "TDC1",
+      "pin": "20",
+      "pinfunction": "VREG_20",
+      "pintype": "power_out",
+      "net": "Net-(TDC1-VREG)"
+    },
+    "1": {
+      "ref": "TDC1",
+      "pin": "1",
+      "pinfunction": "~{RST}_1",
+      "pintype": "input",
+      "net": "Net-(TDC1-~{RST})"
+    },
+    "3": {
+      "ref": "TDC1",
+      "pin": "3",
+      "pinfunction": "P1.4_3",
+      "pintype": "bidirectional",
+      "net": "unconnected-(TDC1-P1.4-Pad3)"
+    },
+    "4": {
+      "ref": "TDC1",
+      "pin": "4",
+      "pinfunction": "P1.5_4",
+      "pintype": "bidirectional",
+      "net": "unconnected-(TDC1-P1.5-Pad4)"
+    },
+    "5": {
+      "ref": "TDC1",
+      "pin": "5",
+      "pinfunction": "P1.6_5",
+      "pintype": "bidirectional",
+      "net": "unconnected-(TDC1-P1.6-Pad5)"
+    },
+    "6": {
+      "ref": "TDC1",
+      "pin": "6",
+      "pinfunction": "P1.7_6",
+      "pintype": "bidirectional",
+      "net": "unconnected-(TDC1-P1.7-Pad6)"
+    },
+    "29": {
+      "ref": "TDC1",
+      "pin": "29",
+      "pinfunction": "XOUT_29",
+      "pintype": "output+no_connect",
+      "net": "unconnected-(TDC1-P2.0-Pad29)"
+    },
+    "30": {
+      "ref": "TDC1",
+      "pin": "30",
+      "pinfunction": "XIN_30",
+      "pintype": "input+no_connect",
+      "net": "unconnected-(TDC1-P2.1-Pad30)"
+    },
+    "11": {
+      "ref": "TDC1",
+      "pin": "11",
+      "pinfunction": "SYNC_11",
+      "pintype": "input+no_connect",
+      "net": "unconnected-(TDC1-P2.2-Pad11)"
+    },
+    "14": {
+      "ref": "TDC1",
+      "pin": "14",
+      "pinfunction": "CAP0.2_14",
+      "pintype": "bidirectional+no_connect",
+      "net": "unconnected-(TDC1-P2.3-Pad14)"
+    },
+    "18": {
+      "ref": "TDC1",
+      "pin": "18",
+      "pinfunction": "CAP1.2_18",
+      "pintype": "bidirectional+no_connect",
+      "net": "unconnected-(TDC1-P2.5-Pad18)"
+    },
+    "19": {
+      "ref": "TDC1",
+      "pin": "19",
+      "pinfunction": "CAP1.3_19",
+      "pintype": "bidirectional+no_connect",
+      "net": "unconnected-(TDC1-P2.6-Pad19)"
+    },
+    "15": {
+      "ref": "TDC1",
+      "pin": "15",
+      "pinfunction": "CAP0.3_15",
+      "pintype": "bidirectional+no_connect",
+      "net": "unconnected-(TDC1-P3.4-Pad15)"
+    },
+    "26": {
+      "ref": "TDC1",
+      "pin": "26",
+      "pinfunction": "CAP3.1_26",
+      "pintype": "bidirectional+no_connect",
+      "net": "unconnected-(TDC1-P3.5-Pad26)"
+    },
+    "23": {
+      "ref": "TDC1",
+      "pin": "23",
+      "pinfunction": "CAP2.2_23",
+      "pintype": "bidirectional+no_connect",
+      "net": "unconnected-(TDC1-P4.1-Pad23)"
+    },
+    "24": {
+      "ref": "TDC1",
+      "pin": "24",
+      "pinfunction": "CAP2.3_24",
+      "pintype": "bidirectional+no_connect",
+      "net": "unconnected-(TDC1-P4.2-Pad24)"
+    }
+  },
+  "sector_id_resistors": {
+    "s.ID_RC1": "10k\u03a9",
+    "s.ID_RC2": "10k\u03a9",
+    "s.ID_RC3": "10k\u03a9",
+    "s.ID_RC4": "10k\u03a9",
+    "s.ID_RC5": "10k\u03a9",
+    "s.ID_RC6": "10k\u03a9",
+    "s.ID_RC7": "10k\u03a9",
+    "s.ID_RC8": "10k\u03a9",
+    "s.ID_RC9": "10k\u03a9",
+    "s.ID_RC10": "10k\u03a9",
+    "s.ID_RC11": "10k\u03a9",
+    "s.ID_RC12": "10k\u03a9",
+    "s.ID_RV1": "121k\u03a9",
+    "s.ID_RV2": "54.9k\u03a9",
+    "s.ID_RV3": "33.2k\u03a9",
+    "s.ID_RV4": "22.6k\u03a9",
+    "s.ID_RV5": "16.2k\u03a9",
+    "s.ID_RV6": "11.8k\u03a9",
+    "s.ID_RV7": "8.66k\u03a9",
+    "s.ID_RV8": "6.19k\u03a9",
+    "s.ID_RV9": "4.42k\u03a9",
+    "s.ID_RV10": "3.01k\u03a9",
+    "s.ID_RV11": "1.82k\u03a9",
+    "s.ID_RV12": "825\u03a9"
+  },
+  "assignments": {
+    "touch_irq": [
+      {
+        "sector": 1,
+        "gpio": "PA0",
+        "package_pin": 10,
+        "net": "/TOUCH_IRQ_S1"
+      },
+      {
+        "sector": 2,
+        "gpio": "PA1",
+        "package_pin": 11,
+        "net": "/TOUCH_IRQ_S2"
+      },
+      {
+        "sector": 3,
+        "gpio": "PA2",
+        "package_pin": 12,
+        "net": "/TOUCH_IRQ_S3"
+      },
+      {
+        "sector": 4,
+        "gpio": "PA3",
+        "package_pin": 13,
+        "net": "/TOUCH_IRQ_S4"
+      },
+      {
+        "sector": 5,
+        "gpio": "PA4",
+        "package_pin": 14,
+        "net": "/TOUCH_IRQ_S5"
+      },
+      {
+        "sector": 6,
+        "gpio": "PA5",
+        "package_pin": 15,
+        "net": "/TOUCH_IRQ_S6"
+      },
+      {
+        "sector": 7,
+        "gpio": "PB3",
+        "package_pin": 39,
+        "net": "/TOUCH_IRQ_S7"
+      },
+      {
+        "sector": 8,
+        "gpio": "PB4",
+        "package_pin": 40,
+        "net": "/TOUCH_IRQ_S8"
+      },
+      {
+        "sector": 9,
+        "gpio": "PB5",
+        "package_pin": 41,
+        "net": "/TOUCH_IRQ_S9"
+      },
+      {
+        "sector": 10,
+        "gpio": "PB6",
+        "package_pin": 42,
+        "net": "/TOUCH_IRQ_S10"
+      },
+      {
+        "sector": 11,
+        "gpio": "PB7",
+        "package_pin": 43,
+        "net": "/TOUCH_IRQ_S11"
+      },
+      {
+        "sector": 12,
+        "gpio": "PB8",
+        "package_pin": 45,
+        "net": "/TOUCH_IRQ_S12"
+      }
+    ],
+    "led_data": [
+      {
+        "sector": 1,
+        "gpio": "PA4",
+        "package_pin": 14,
+        "net": "/LED_GPIO_S1"
+      },
+      {
+        "sector": 2,
+        "gpio": "PA5",
+        "package_pin": 15,
+        "net": "/LED_GPIO_S2"
+      },
+      {
+        "sector": 3,
+        "gpio": "PA6",
+        "package_pin": 16,
+        "net": "/LED_GPIO_S3"
+      },
+      {
+        "sector": 4,
+        "gpio": "PA7",
+        "package_pin": 17,
+        "net": "/LED_GPIO_S4"
+      },
+      {
+        "sector": 5,
+        "gpio": "PB0",
+        "package_pin": 18,
+        "net": "/LED_GPIO_S5"
+      },
+      {
+        "sector": 6,
+        "gpio": "PB1",
+        "package_pin": 19,
+        "net": "/LED_GPIO_S6"
+      },
+      {
+        "sector": 7,
+        "gpio": "PB7",
+        "package_pin": 43,
+        "net": "/LED_GPIO_S7"
+      },
+      {
+        "sector": 8,
+        "gpio": "PB6",
+        "package_pin": 42,
+        "net": "/LED_GPIO_S8"
+      },
+      {
+        "sector": 9,
+        "gpio": "PB5",
+        "package_pin": 41,
+        "net": "/LED_GPIO_S9"
+      },
+      {
+        "sector": 10,
+        "gpio": "PB4",
+        "package_pin": 40,
+        "net": "/LED_GPIO_S10"
+      },
+      {
+        "sector": 11,
+        "gpio": "PB3",
+        "package_pin": 39,
+        "net": "/LED_GPIO_S11"
+      },
+      {
+        "sector": 12,
+        "gpio": "PA15",
+        "package_pin": 38,
+        "net": "/LED_GPIO_S12"
+      }
+    ]
+  },
+  "led_module_serial_chain": [
+    "LED_C1:1",
+    "LED_C1:2",
+    "LED_C1:3",
+    "LED_C1:4",
+    "LED_C1:5",
+    "LED_C1:6",
+    "LED_C1:7",
+    "LED_C1:8",
+    "LED_C1:9",
+    "LED_C1:10",
+    "LED_C2:1",
+    "LED_C2:2",
+    "LED_C2:3",
+    "LED_C2:4",
+    "LED_C2:5",
+    "LED_C2:6",
+    "LED_C2:7",
+    "LED_C2:8",
+    "LED_C2:9",
+    "LED_C2:10",
+    "LED_C3:1",
+    "LED_C3:2",
+    "LED_C3:3",
+    "LED_C3:4",
+    "LED_C3:5",
+    "LED_C3:6",
+    "LED_C3:7",
+    "LED_C3:8",
+    "LED_C3:9",
+    "LED_C3:10",
+    "LED_C4:1",
+    "LED_C4:2",
+    "LED_C4:3",
+    "LED_C4:4",
+    "LED_C4:5",
+    "LED_C4:6",
+    "LED_C4:7",
+    "LED_C4:8",
+    "LED_C4:9",
+    "LED_C4:10",
+    "LED_C5:1",
+    "LED_C5:2",
+    "LED_C5:3",
+    "LED_C5:4",
+    "LED_C5:5",
+    "LED_C5:6",
+    "LED_C5:7",
+    "LED_C5:8",
+    "LED_C5:9",
+    "LED_C5:10",
+    "LED_C6:1",
+    "LED_C6:2",
+    "LED_C6:3",
+    "LED_C6:4",
+    "LED_C6:5",
+    "LED_C6:6",
+    "LED_C6:7",
+    "LED_C6:8",
+    "LED_C6:9",
+    "LED_C6:10",
+    "LED_C7:1",
+    "LED_C7:2",
+    "LED_C7:3",
+    "LED_C7:4",
+    "LED_C7:5",
+    "LED_C7:6",
+    "LED_C7:7",
+    "LED_C7:8",
+    "LED_C7:9",
+    "LED_C7:10",
+    "LED_C8:1",
+    "LED_C8:2",
+    "LED_C8:3",
+    "LED_C8:4",
+    "LED_C8:5",
+    "LED_C8:6",
+    "LED_C8:7",
+    "LED_C8:8",
+    "LED_C8:9",
+    "LED_C8:10"
+  ],
+  "led_geometry": {
+    "physical_leds_per_module": 80,
+    "modules_per_sector": 5,
+    "sectors": 12,
+    "physical_leds_per_sector": 400,
+    "physical_leds_total": 4800,
+    "rgb_frame_bytes_total": 14400,
+    "assembly_geometry_source": "User correction, 2026-10-25; five module PCBs per sector",
+    "netlist_scope": "One 80-LED module; inter-module cabling is outside this netlist"
+  },
+  "hub_port_swap": {
+    "register": "0xFA",
+    "value": "0x06",
+    "intentional": true
+  }
+}

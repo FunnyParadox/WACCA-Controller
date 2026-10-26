@@ -1,0 +1,56 @@
+{
+	"repository": "openwch/ch32v20x",
+	"commit": "b375bbbc7dfe8642d6fb7c17e6d3207ee1c3c9c1",
+	"files": [
+		{
+			"source": "EVT/EXAM/GPIO/GPIO_Toggle/User/system_ch32v20x.h",
+			"destination": "System/system_ch32v20x.h",
+			"blob_sha": "9c8a3f712991142c9d561e4764823cd77b2816d7"
+		},
+		{
+			"source": "EVT/EXAM/SRC/Core/core_riscv.h",
+			"destination": "Core/core_riscv.h",
+			"blob_sha": "68af87a76f0fda284ae8f6d57c6e7e69574943b4"
+		},
+		{
+			"source": "EVT/EXAM/SRC/Ld/Link.ld",
+			"destination": "Ld/Link.ld",
+			"blob_sha": "0385dbbfca585884ab87b4dc7cbe2af6ae72dbdc"
+		},
+		{
+			"source": "EVT/EXAM/SRC/Peripheral/inc/ch32v20x.h",
+			"destination": "Peripheral/inc/ch32v20x.h",
+			"blob_sha": "4075c12206bf03ff73771c4c890b2c8e8738ce9f"
+		},
+		{
+			"source": "EVT/EXAM/SRC/Peripheral/inc/ch32v20x_gpio.h",
+			"destination": "Peripheral/inc/ch32v20x_gpio.h",
+			"blob_sha": "8af3764d8818f2d039ca6c51feebcdc9cd6dc258"
+		},
+		{
+			"source": "EVT/EXAM/SRC/Peripheral/inc/ch32v20x_rcc.h",
+			"destination": "Peripheral/inc/ch32v20x_rcc.h",
+			"blob_sha": "9700381ed64c919590094558a849cda777ec959d"
+		},
+		{
+			"source": "EVT/EXAM/SRC/Peripheral/src/ch32v20x_gpio.c",
+			"destination": "Peripheral/src/ch32v20x_gpio.c",
+			"blob_sha": "5fcfd99d235f8fa051427ed38d64db542c37ce77"
+		},
+		{
+			"source": "EVT/EXAM/SRC/Peripheral/src/ch32v20x_rcc.c",
+			"destination": "Peripheral/src/ch32v20x_rcc.c",
+			"blob_sha": "f4a3df274999c5c47d829565be177f5f30565d9d"
+		},
+		{
+			"source": "EVT/EXAM/SRC/Startup/startup_ch32v20x_D6.S",
+			"destination": "Startup/startup_ch32v20x_D6.S",
+			"blob_sha": "1e3f7dd9df7d1993e2dad2d4347e3e8f3272b484"
+		},
+		{
+			"source": "EVT/EXAM/USB/USBD/SimulateCDC/User/USBLIB/USB-Driver/inc/usb_regs.h",
+			"destination": "USB/usb_regs.h",
+			"blob_sha": "2a7a03ba2bdaa6ea00c4ee6ecea90349b75b2fb0"
+		}
+	]
+}
