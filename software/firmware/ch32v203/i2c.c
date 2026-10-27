@@ -82,7 +82,7 @@ static bool prepare_configuration(struct bus_state *bus)
 	RCC_APB1PeriphClockCmd(bus->peripheral, ENABLE);
 
 	WRITE(bus, CTLR1, 0);
-	// Explicitly select default I2C1 PB6/PB7; PB9 must remain the hub reset
+	// Explicitly select default I2C1 PB6/PB7; the remapped PB8/PB9 pair is unused
 	if (bus == &buses[WACCA_I2C_BUS1])
 	{
 		RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);

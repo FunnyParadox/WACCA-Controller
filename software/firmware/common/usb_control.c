@@ -13,7 +13,7 @@
 static const uint8_t device[] = { 18, 1, 0, 2, 2, 2, 1, 64, (WACCA_USB_VID >> 0) & 0xFF, (WACCA_USB_VID >> 8) & 0xFF, (WACCA_USB_PID >> 0) & 0xFF, (WACCA_USB_PID >> 8) & 0xFF, 0, 1, 1, 2, 3, 1 };
 static const uint8_t configuration[] =
 {
-	9, 2, 67, 0, 2, 1, 0, 0x80, 0, // Permanent compound-hub child; hub budgets its power
+	9, 2, 67, 0, 2, 1, 0, 0x80, 50, // Bus-powered CH334F child: 100 mA (2 mA units)
 	9, 4, 0, 0, 1, 2, 2, 1, 0, // CDC ACM communication interface
 	5, 0x24, 0, 0x10, 1, // CDC 1.10
 	5, 0x24, 1, 0, 1, // Call management; data interface 1
@@ -35,7 +35,13 @@ static uint16_t string_descriptor(struct wacca_usb_control *c, uint8_t index)
 	{
 		case 0: c->scratch[0] = 4; c->scratch[1] = 3; c->scratch[2] = 9; c->scratch[3] = 4; return (4);
 		case 1: s = "WACCA-Compatible Controller"; break;
-		case 2: s = c->role == WACCA_ROLE_TOUCH ? "WACCA-Comp.Con: Touch Prototype" : "WACCA-Comp.Con: LED Prototype"; break;
+		case 2:
+		#if defined(WACCA_BOOTLOADER)
+			s = c->role == WACCA_ROLE_TOUCH ? "WACCA: Touch USB updater" : "WACCA: LED USB updater";
+		#else
+			s = c->role == WACCA_ROLE_TOUCH ? "WACCA-Comp.Con: Touch Prototype" : "WACCA-Comp.Con: LED Prototype";
+		#endif
+		break;
 		case 3: s = c->role == WACCA_ROLE_TOUCH ? "WCC-T-TEST" : "WCC-L-TEST"; break;
 		default: return 0;
 	}

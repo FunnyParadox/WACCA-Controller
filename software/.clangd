@@ -8,6 +8,11 @@ CompileFlags:
     - -isystem../../.tools/risc-none-embed-gcc-8.2.0/riscv-none-embed/include
 ---
 If:
+  PathMatch: mercuryio/.*
+CompileFlags:
+  CompilationDatabase: mercuryio/build
+---
+If:
   PathMatch: (host|tests)/.*
 CompileFlags:
   CompilationDatabase: build/host

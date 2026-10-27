@@ -2,7 +2,7 @@
 [CmdletBinding()]
 param(
 	[Parameter(Position = 0)]
-	[ValidateSet('firmware', 'touch', 'led', 'tests', 'all')]
+	[ValidateSet('firmware', 'touch', 'led', 'tests', 'mercuryio', 'updater', 'all')]
 	[string]$Target = 'firmware'
 )
 $ErrorActionPreference = 'Stop'
@@ -23,7 +23,7 @@ function Invoke-CMake([string[]]$CmakeArguments) {
 	if ($LASTEXITCODE -ne 0) { throw "CMake failed (exit $LASTEXITCODE)" }
 }
 
-if ($Target -ne 'tests') {
+if ($Target -notin @('tests', 'mercuryio', 'updater')) {
 	$compilerFile = Join-Path $projectDirectory '.tools/risc-none-embed-gcc-8.2.0/bin/riscv-none-embed-gcc.exe'
 	if (-not (Test-Path -LiteralPath $compilerFile -PathType Leaf)) {
 		throw 'WCH compiler missing: restore software/.tools/risc-none-embed-gcc-8.2.0'
@@ -41,22 +41,33 @@ if ($Target -ne 'tests') {
 	$programs = if ($Target -eq 'touch' -or $Target -eq 'led') { @($Target) } else { @('touch', 'led') }
 	Invoke-CMake (@('--build', $buildDirectory, '--parallel', '--target') + $programs)
 	foreach ($program in $programs) {
-		$image = Join-Path $buildDirectory "$program.hex"
-		if (-not (Test-Path -LiteralPath $image -PathType Leaf)) { throw "Build did not produce $image" }
-		Write-Host "Ready: $image" -ForegroundColor Green
+		foreach ($suffix in @('factory.hex', 'wcfu')) {
+			$image = Join-Path $buildDirectory "$program.$suffix"
+			if (-not (Test-Path -LiteralPath $image -PathType Leaf)) { throw "Build did not produce $image" }
+			Write-Host "Ready: $image" -ForegroundColor Green
+		}
 	}
 	Write-Host 'Building does not flash either MCU'
 }
 
-if ($Target -eq 'tests' -or $Target -eq 'all') {
+if ($Target -ne 'mercuryio') {
 	$hostCompiler = Find-BuildTool 'gcc.exe' 'C:/msys64/ucrt64/bin/gcc.exe'
 	$ctestFile = Find-BuildTool 'ctest.exe' (Join-Path (Split-Path $cmakeFile) 'ctest.exe')
 	$buildDirectory = Join-Path $projectDirectory 'build/host'
-	Write-Host 'Building PC tests and the USB probe...'
+	Write-Host 'Building the PC USB updater...'
 	Invoke-CMake @('-S', $projectDirectory, '-B', $buildDirectory, '-G', 'Ninja',
 		"-DCMAKE_MAKE_PROGRAM=$ninjaFile", "-DCMAKE_C_COMPILER=$hostCompiler",
 		'-DCMAKE_BUILD_TYPE=Debug')
-	Invoke-CMake @('--build', $buildDirectory, '--parallel')
-	& $ctestFile --test-dir $buildDirectory --output-on-failure
-	if ($LASTEXITCODE -ne 0) { throw "Tests failed (exit $LASTEXITCODE)" }
+	if ($Target -eq 'tests' -or $Target -eq 'all') {
+		Invoke-CMake @('--build', $buildDirectory, '--parallel')
+		& $ctestFile --test-dir $buildDirectory --output-on-failure
+		if ($LASTEXITCODE -ne 0) { throw "Tests failed (exit $LASTEXITCODE)" }
+	} else {
+		Invoke-CMake @('--build', $buildDirectory, '--parallel', '--target', 'wacca_flash')
+	}
+	Write-Host "USB updater: $(Join-Path $buildDirectory 'wacca_flash.exe')" -ForegroundColor Green
+}
+
+if ($Target -eq 'mercuryio') {
+	& (Join-Path $projectDirectory 'mercuryio/build.ps1')
 }

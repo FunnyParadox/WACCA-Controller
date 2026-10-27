@@ -31,5 +31,4 @@ const struct wacca_pin wacca_touch_scl[WACCA_I2C_BUS_COUNT] = {
 const struct wacca_pin wacca_touch_sda[WACCA_I2C_BUS_COUNT] = {
 	{ WACCA_GPIO_B, 7, 43 }, { WACCA_GPIO_B, 11, 22 }
 };
-const struct wacca_pin wacca_hub_reset = { WACCA_GPIO_B, 9, 46 };
 const struct wacca_pin wacca_brightness = { WACCA_GPIO_A, 3, 13 };

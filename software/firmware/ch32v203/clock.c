@@ -1,6 +1,16 @@
 #include "ch32v20x.h"
 #include "mcu.h"
 
+#if defined(WACCA_BOOTLOADER)
+#define WACCA_CORE_HZ 48000000U
+#define WACCA_PLL_MULTIPLIER RCC_PLLMULL6
+#define WACCA_USB_DIVIDER RCC_USBCLKSource_PLLCLK_Div1
+#else
+#define WACCA_CORE_HZ 144000000U
+#define WACCA_PLL_MULTIPLIER RCC_PLLMULL18
+#define WACCA_USB_DIVIDER RCC_USBCLKSource_PLLCLK_Div3
+#endif
+
 uint32_t SystemCoreClock = 8000000;
 volatile enum wacca_clock_state wacca_clock_state;
 
@@ -14,7 +24,7 @@ static bool wait_register(volatile uint32_t *reg, uint32_t mask, uint32_t value)
 
 void SystemInit(void)
 {
-	// WCH D6 reset sequence; keep the hub detached during all clock setup
+	// WCH D6 reset sequence; the CH334F hub starts independently in hardware
 	{
 		RCC->CTLR	|= 1;
 		// Clears clock selection, divider, and clock-output configuration fields to a known initial state
@@ -30,17 +40,11 @@ void SystemInit(void)
 	}
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOA, ENABLE);
 
-	#if defined(WACCA_TOUCH_MCU)
-		GPIO_ResetBits(GPIOB, GPIO_Pin_9);
-		GPIO_InitTypeDef pin = { GPIO_Pin_9, GPIO_Speed_2MHz, GPIO_Mode_Out_OD };
-		GPIO_Init(GPIOB, &pin);
-	#endif
-
 	// Enable external crystal oscillator
 	RCC->CTLR |= RCC_HSEON;
 	if (!wait_register(&RCC->CTLR, RCC_HSERDY, RCC_HSERDY)) { wacca_clock_state = WACCA_CLOCK_HSE_FAILED; return; }
 
-	#if defined(WACCA_TOUCH_MCU)
+	#if defined(WACCA_TOUCH_MCU) && !defined(WACCA_BOOTLOADER)
 		// I2C requires a 4..60 MHz input clock: APB1 = 144 / 4 = 36 MHz.
 		RCC->CFGR0 |= RCC_PPRE1_DIV4;
 	#else
@@ -48,8 +52,8 @@ void SystemInit(void)
 	#endif
 	// Clear old PLL configuration fields before inserting the new settings
 	RCC->CFGR0 &= ~(RCC_PLLSRC | RCC_PLLXTPRE | RCC_PLLMULL);
-	// Choose the external oscillator as the PLL source, and multiply it by 18 to reach 144 MHz
-	RCC->CFGR0 |= (RCC_PLLSRC_HSE | RCC_PLLMULL18);
+	// Applications use 144 MHz; the USB updater uses 48 MHz for flash access.
+	RCC->CFGR0 |= (RCC_PLLSRC_HSE | WACCA_PLL_MULTIPLIER);
 	RCC->CTLR |= RCC_PLLON;
 	if (!wait_register(&RCC->CTLR, RCC_PLLRDY, RCC_PLLRDY)) { wacca_clock_state = WACCA_CLOCK_PLL_FAILED; return; }
 
@@ -57,10 +61,10 @@ void SystemInit(void)
 	RCC->CFGR0 = (RCC->CFGR0 & ~RCC_SW) | RCC_SW_PLL;
 	if (!wait_register(&RCC->CFGR0, RCC_SWS, 0x08)) { wacca_clock_state = WACCA_CLOCK_SWITCH_FAILED; return; }
 
-	SystemCoreClock = 144 * 1000000; // 144MHz
-	RCC_USBCLKConfig(RCC_USBCLKSource_PLLCLK_Div3);
+	SystemCoreClock = WACCA_CORE_HZ;
+	RCC_USBCLKConfig(WACCA_USB_DIVIDER);
 	wacca_clock_state = WACCA_CLOCK_READY;
 }
 
 // The bootstrap deliberately has only these two clock states
-void SystemCoreClockUpdate(void) { SystemCoreClock = (((RCC->CFGR0 & RCC_SWS) == 0x08) ? 144 : 8) * 1000000; } // 144MHz or 8MHz
+void SystemCoreClockUpdate(void) { SystemCoreClock = ((RCC->CFGR0 & RCC_SWS) == 0x08) ? WACCA_CORE_HZ : 8000000U; }

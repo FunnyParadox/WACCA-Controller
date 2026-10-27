@@ -4,7 +4,10 @@
 
 struct wacca_usb_stats { uint32_t resets, errors, received, transmitted, generation; };
 void wacca_usb_init(enum wacca_role role);
+void wacca_usb_detach(void);
 bool wacca_usb_ready(void);
+// True after the last IN packet has completed (used before a firmware-update reset).
+bool wacca_usb_tx_idle(void);
 uint32_t wacca_usb_generation(void);
 size_t wacca_usb_read(uint8_t *data, size_t capacity);
 // One short message per call (1..64 bytes), copied before returning

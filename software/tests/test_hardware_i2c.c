@@ -1,6 +1,5 @@
 #include "i2c_sim.h"
 #include "i2c.h"
-#include "usb2422.h"
 #include <assert.h>
 #include <stdio.h>
 #include <string.h>
@@ -12,7 +11,7 @@ static struct simulation {
 	uint16_t stall, error, data_error;
 	unsigned nack_address, nack_data;
 	bool read_direction, status_read, stop_pending, stuck_stop, stuck_busy;
-	bool clock_enabled, alternate_pins, hub_reset;
+	bool clock_enabled, alternate_pins;
 	uint8_t wire_addresses[32], sent[1024], input[256];
 	size_t sent_length, input_length, input_offset;
 } simulation[WACCA_I2C_BUS_COUNT];
@@ -227,21 +226,14 @@ static void check_speed(void)
 	assert(wacca_i2c_set_speed(TEST_BUS, WACCA_I2C_STANDARD_HZ));
 	assert(regs.CKCFGR == 180 && regs.RTR == 37);
 	assert(wacca_i2c_set_speed(TEST_BUS, WACCA_I2C_FAST_HZ) && wacca_i2c_init(TEST_BUS, WACCA_I2C_STANDARD_HZ));
-	assert(regs.CKCFGR == 180); // Hub bootstrap always restores Standard-mode.
+	assert(regs.CKCFGR == 180); // Explicit reinitialization selects the requested speed.
 	fresh(); sim.stuck_busy = true;
 	assert(!wacca_i2c_set_speed(TEST_BUS, WACCA_I2C_FAST_HZ));
 	assert(regs.CTLR1 == 0 && sim.starts == 0);
 }
-static void set_reset(void *ctx, bool asserted) { (void)ctx; sim.hub_reset = asserted; }
-static bool prepare(void *ctx) { (void)ctx; assert(sim.hub_reset); return wacca_i2c_init(TEST_BUS, WACCA_I2C_STANDARD_HZ); }
-static void delay(void *ctx, uint32_t us) { (void)ctx; wacca_delay_us(us); }
-static bool write_hub(void *ctx, uint8_t address, const uint8_t *tx, size_t n)
-{ (void)ctx; assert(!sim.hub_reset && !(regs.CKCFGR & I2C_CKCFGR_FS)); return wacca_i2c_transfer(TEST_BUS, address, tx, n, NULL, 0); }
-static bool read_hub(void *ctx, uint8_t address, const uint8_t *tx, size_t n, uint8_t *rx, size_t rx_n)
-{ (void)ctx; assert(!(regs.CKCFGR & I2C_CKCFGR_FS)); return wacca_i2c_transfer(TEST_BUS, address, tx, n, rx, rx_n); }
 static void check_bus(void)
 {
-	const uint8_t tx[] = {0xFA, 1, 6}; uint8_t rx[2];
+	const uint8_t tx[] = {0xFA, 1, 0}; uint8_t rx[2];
 	fresh(); assert(wacca_i2c_transfer(TEST_BUS, 0x2C, tx, sizeof(tx), NULL, 0));
 	assert(sim.starts == 1 && sim.stops == 1 && sim.wire_addresses[0] == 0x58);
 	assert(sim.sent_length == sizeof(tx) && memcmp(sim.sent, tx, sizeof(tx)) == 0);
@@ -289,27 +281,13 @@ static void check_bus(void)
 	fresh(); irq = 0; sim.input_length = 2;
 	assert(wacca_i2c_transfer(TEST_BUS, 0x2C, tx, 1, rx, 2) && irq == 0);
 }
-static void check_hub(void)
-{
-	selected = WACCA_I2C_BUS2;
-	fresh(); sim.input_length = 2; sim.input[0] = 1; sim.input[1] = 6;
-	uint8_t image[WACCA_HUB_CONFIG_SIZE];
-	const struct wacca_hub_io io = {NULL, set_reset, prepare, delay, write_hub, read_hub};
-	assert(wacca_usb2422_config(image, sizeof(image), 500, 100));
-	assert(wacca_usb2422_start(&io, image, sizeof(image)) == WACCA_HUB_OK);
-	assert(sim.starts == 11 && sim.stops == 10 && !sim.hub_reset);
-	assert(sim.sent[sim.sent_length - 3] == 0xFF && sim.sent[sim.sent_length - 1] == 5);
-	assert(wacca_i2c_set_speed(TEST_BUS, WACCA_I2C_FAST_HZ));
-	assert(regs.CKCFGR == (I2C_CKCFGR_FS | 30U));
-	assert(simulation[WACCA_I2C_BUS1].starts == 0);
-}
 static void fresh_both(void)
 {
 	selected = WACCA_I2C_BUS1;
 	fresh();
 	assert(wacca_i2c_init(WACCA_I2C_BUS2, WACCA_I2C_STANDARD_HZ));
 	assert(wacca_i2c_set_speed(WACCA_I2C_BUS1, WACCA_I2C_FAST_HZ));
-	// I2C1 changes must not change the hub's Standard-mode bus.
+	// I2C1 changes must not change the independent second bus.
 	assert(simulated_i2c_regs[1].CKCFGR == 180);
 	assert(wacca_i2c_set_speed(WACCA_I2C_BUS2, WACCA_I2C_FAST_HZ));
 	for (unsigned bus = 0; bus < WACCA_I2C_BUS_COUNT; ++bus) {
@@ -425,8 +403,7 @@ static void check_parallel(void)
 int main(void)
 {
 	for (selected = 0; selected < WACCA_I2C_BUS_COUNT; ++selected) check_bus();
-	check_hub();
 	check_parallel();
-	puts("Hardware I2C1/I2C2: independent 100/400 kHz timing, simultaneous transfers, receive endings, bus-local fault recovery and hub handover passed.");
+	puts("Hardware I2C1/I2C2: independent 100/400 kHz timing, simultaneous transfers, receive endings, bus-local fault recovery passed.");
 	return 0;
 }

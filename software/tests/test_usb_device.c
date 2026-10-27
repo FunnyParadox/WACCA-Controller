@@ -118,6 +118,9 @@ static void test_reset_suspend(void)
 int main(void)
 {
 	test_enumeration(); test_bulk(); test_reset_suspend();
+	wacca_usb_detach();
+	assert(!wacca_usb_ready() && wacca_usb_tx_idle());
+	assert((EXTEN->EXTEN_CTR & EXTEN_USBD_PU_EN) == 0);
 	puts("USBD simulated enumeration, flow control, halt, reset and suspend passed"); return 0;
 }
 

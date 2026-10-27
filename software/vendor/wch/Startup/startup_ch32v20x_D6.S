@@ -230,6 +230,10 @@ handle_reset:
 	addi a0, a0, 4
 	bltu a0, a1, .Lclear_zero_initialized_data
 .Lbss_clear_done:
+#if defined(WACCA_BOOTLOADER)
+	// Make the flash-polling functions copied into RAM visible to instruction fetch.
+	fence.i
+#endif
 	// Configure pipelining and instruction prediction
 	li t0, 0x1f
 	csrw 0xbc0, t0
@@ -237,7 +241,12 @@ handle_reset:
 	li t0, 0x3
 	csrw 0x804, t0
 	// Enable global interrupt and configure privileged mode
-	li t0, 0x88           
+#if defined(WACCA_BOOTLOADER)
+	// Direct application handover needs machine mode for its startup CSR writes.
+	li t0, 0x1888
+#else
+	li t0, 0x88
+#endif
 	csrw mstatus, t0
 	// Configure the interrupt vector table recognition mode and entry address mode
 	la t0, _vector_base

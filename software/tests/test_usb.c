@@ -20,7 +20,7 @@ static void test_descriptors(void)
 	assert(request(0x80,6,0x100,0,65535,&p,&n) == WACCA_CONTROL_IN);
 	assert(n == 18 && p[0] == 18 && p[4] == 2 && p[5] == 2 && p[7] == 64);
 	assert(request(0x80,6,0x200,0,65535,&p,&n) == WACCA_CONTROL_IN);
-	assert(n == 67 && p[2] == n && p[4] == 2 && p[7] == 0x80 && p[8] == 0);
+	assert(n == 67 && p[2] == n && p[4] == 2 && p[7] == 0x80 && p[8] == 50);
 	unsigned endpoints=0, interfaces=0;
 	for (unsigned off=0; off<n; off+=p[off]) {
 		assert(p[off]>=2 && off+p[off]<=n);

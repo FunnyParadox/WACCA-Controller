@@ -48,6 +48,86 @@
 				"panel": "shared",
 				"clear": true
 			}
+		},
+		{
+			"label": "Build mercuryio DLL",
+			"type": "process",
+			"command": "powershell.exe",
+			"args": [
+				"-NoProfile",
+				"-File",
+				"${workspaceFolder}/mercuryio/build.ps1"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/mercuryio"
+			},
+			"group": "build",
+			"problemMatcher": [
+				"$gcc"
+			],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": true
+			}
+		},
+		{
+			"label": "Update MCU through USB-C",
+			"type": "process",
+			"command": "powershell.exe",
+			"args": [
+				"-NoProfile",
+				"-File",
+				"${workspaceFolder}/flash.ps1",
+				"${input:updateTarget}",
+				"${input:updatePort}"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": true
+			}
+		},
+		{
+			"label": "First flash or recover MCU through USB-C",
+			"type": "process",
+			"command": "powershell.exe",
+			"args": [
+				"-NoProfile",
+				"-File",
+				"${workspaceFolder}/flash.ps1",
+				"${input:updateTarget}",
+				"-Factory"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared",
+				"clear": true
+			}
+		}
+	],
+	"inputs": [
+		{
+			"id": "updateTarget",
+			"type": "pickString",
+			"description": "MCU to program (for factory flashing, put only this MCU into BOOT0 mode)",
+			"options": [
+				"touch",
+				"led"
+			]
+		},
+		{
+			"id": "updatePort",
+			"type": "promptString",
+			"description": "Current Windows COM port of that MCU (for example COM7)"
 		}
 	]
 }

@@ -32,3 +32,18 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
 		usb_sim "${PROJECT_SOURCE_DIR}/firmware/ch32v203"
 		"${PROJECT_SOURCE_DIR}/vendor/wch/USB")
 endif()
+
+add_wacca_test(wacca_update_test test_update.c "${PROJECT_SOURCE_DIR}/host/update_client.c")
+target_include_directories(wacca_update_test PRIVATE "${PROJECT_SOURCE_DIR}/host")
+find_package(Python3 COMPONENTS Interpreter REQUIRED)
+add_test(NAME wacca_package_test COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/test_package.py")
+
+add_wacca_test(wacca_diagnostics_test test_diagnostics.c
+	"${PROJECT_SOURCE_DIR}/firmware/common/diagnostics.c")
+target_include_directories(wacca_diagnostics_test PRIVATE "${PROJECT_SOURCE_DIR}/firmware/ch32v203")
+
+if(WIN32)
+	find_program(WACCA_POWERSHELL NAMES powershell.exe REQUIRED)
+	add_test(NAME wacca_flash_script_test COMMAND "${WACCA_POWERSHELL}" -NoProfile -File
+		"${CMAKE_CURRENT_SOURCE_DIR}/test_flash.ps1" -WorkDirectory "${CMAKE_CURRENT_BINARY_DIR}")
+endif()

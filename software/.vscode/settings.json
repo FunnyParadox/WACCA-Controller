@@ -12,11 +12,15 @@
 	},
 	"files.exclude": {
 		"build": true,
-		".tools": true
+		".tools": true,
+		"**/build": true,
+		"**/.cache": true
 	},
 	"search.exclude": {
 		"build/**": true,
-		".tools/**": true
+		".tools/**": true,
+		"**/build/**": true,
+		"**/.cache/**": true
 	},
 	"editor.insertSpaces": false,
 	"editor.detectIndentation": false,

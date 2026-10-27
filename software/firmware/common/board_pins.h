@@ -33,7 +33,6 @@ enum wacca_i2c_bus { WACCA_I2C_BUS1, WACCA_I2C_BUS2, WACCA_I2C_BUS_COUNT };
 extern const enum wacca_i2c_bus wacca_touch_bus[WACCA_SECTORS];
 extern const struct wacca_pin wacca_touch_scl[WACCA_I2C_BUS_COUNT];
 extern const struct wacca_pin wacca_touch_sda[WACCA_I2C_BUS_COUNT];
-extern const struct wacca_pin wacca_hub_reset;
 extern const struct wacca_pin wacca_brightness;
 
 enum { WACCA_BRIGHTNESS_ADC_CHANNEL = 3 };
@@ -43,6 +42,7 @@ enum { WACCA_BRIGHTNESS_ADC_CHANNEL = 3 };
 #define WACCA_LED_GPIOA_MASK UINT16_C(0x80F0)
 #define WACCA_LED_GPIOB_MASK UINT16_C(0x00FB)
 
-// PA11/PA12 are USB, PA13/PA14 remain reserved for the debug probe
+// PA11/PA12 are USB. BOOT0 (pin 44) selects factory USB ISP; PB2 stays LOW.
+// PA13/PA14 are unused by the application and remain available for optional debug.
 // Array index 0 names connector/sector 1, not a game-coordinate direction
 #endif

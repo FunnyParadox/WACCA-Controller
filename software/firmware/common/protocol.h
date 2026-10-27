@@ -10,7 +10,10 @@
 #define WACCA_MAX_PAYLOAD ((size_t)WACCA_LOGICAL_LED_RGB_BYTES)
 #define WACCA_MAX_RAW (WACCA_MAX_PAYLOAD+8U)
 #define WACCA_MAX_ENCODED (WACCA_MAX_RAW+WACCA_MAX_RAW/254U+2U)
-enum wacca_message_type { WACCA_GET_INFO=1, WACCA_GET_STATUS=2, WACCA_PING=3,
+// Application messages are enabled only after the MCU advertises these capabilities.
+enum wacca_capability { WACCA_CAP_TOUCH_STATE = 1U << 0, WACCA_CAP_LED_FRAME = 1U << 1, WACCA_CAP_USB_UPDATE = 1U << 2 };
+#define WACCA_TOUCH_STATE_BYTES ((size_t)(WACCA_SECTORS * WACCA_TOUCH_PER_SECTOR / 8U))
+enum wacca_message_type { WACCA_GET_INFO=1, WACCA_GET_STATUS=2, WACCA_PING=3, WACCA_ENTER_UPDATE=4,
 	WACCA_TOUCH_STATE=0x10, WACCA_LED_FRAME=0x20, WACCA_RESPONSE=0x80, WACCA_ERROR=0xFF };
 struct wacca_message { uint8_t type; uint16_t sequence, length; const uint8_t *payload; };
 struct wacca_decoder { uint8_t buffer[WACCA_MAX_ENCODED]; size_t used; bool discard; uint32_t rejected; };

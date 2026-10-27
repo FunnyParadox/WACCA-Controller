@@ -398,7 +398,18 @@ void wacca_usb_init(enum wacca_role role)
 	wacca_delay_us(20000);
 	EXTEN->EXTEN_CTR |= EXTEN_USBD_PU_EN;
 }
+void wacca_usb_detach(void)
+{
+	NVIC_DisableIRQ(USBWakeUp_IRQn);
+	NVIC_DisableIRQ(USB_LP_CAN1_RX0_IRQn);
+	EXTEN->EXTEN_CTR &= ~EXTEN_USBD_PU_EN;
+	_SetCNTR(CNTR_FRES | CNTR_PDWN);
+	configured = false;
+	suspended = false;
+	tx_busy = false;
+}
 bool wacca_usb_ready(void) { return (configured && !suspended); }
+bool wacca_usb_tx_idle(void) { return !tx_busy; }
 uint32_t wacca_usb_generation(void) { return (generation); }
 size_t wacca_usb_read(uint8_t *data, size_t capacity)
 {

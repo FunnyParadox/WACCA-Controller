@@ -7,7 +7,7 @@ static struct wacca_decoder decoder;
 static uint32_t get32(const uint8_t *p) { return ((uint32_t)(p[0]) | ((uint32_t)(p[1]) << 8) | ((uint32_t)(p[2]) << 16) | ((uint32_t)(p[3]) << 24)); }
 static bool port_name(const char *name,char *path,size_t capacity)
 {
-	if (strncmp(name, "COM", 3) != 0 || name[3] == '\0' || strlen(name)>7) return (false);
+	if (strncmp(name, "COM", 3) != 0 || name[3] == '\0' || strlen(name) > 7) return (false);
 	for (const char *p = name + 3; *p; ++p) if (*p < '0' || *p > '9') return (false);
 
 	char *end;
@@ -116,7 +116,7 @@ int main(int argc,char **argv)
 				return (error("Unknown controller role\n", 1));
 			}
 			printf("%s: WACCA-Compatible Controller %s MCU, firmware %u.%u\n", argv[1], role == 1 ? "touch" : "LED", (unsigned)(reply.payload[3]), (unsigned)(reply.payload[2]));
-			printf("CPU: %lu Hz; boot stage: %lu; hub result: %lu\n", (unsigned long)get32(reply.payload + 4),(unsigned long)get32(reply.payload + 8),(unsigned long)get32(reply.payload + 12));
+			printf("CPU: %lu Hz; boot stage: %lu; hardware status: %lu\n", (unsigned long)get32(reply.payload + 4),(unsigned long)get32(reply.payload + 8),(unsigned long)get32(reply.payload + 12));
 			printf("Pending sector IRQs: 0x%03lX; USB resets: %lu; USB errors: %lu; rejected messages: %lu\n", (unsigned long)get32(reply.payload + 16), (unsigned long)get32(reply.payload + 20), (unsigned long)get32(reply.payload + 24), (unsigned long)get32(reply.payload + 28));
 			(unsigned long)get32(reply.payload + 32) ? printf("Diagnostics only\n") : printf("Capabilities: 0x%08lX\n", (unsigned long)get32(reply.payload + 32));
 			CloseHandle(port);
@@ -124,7 +124,7 @@ int main(int argc,char **argv)
 		}
 	}
 	CloseHandle(port);
-	return (error("No valid reply within 3 seconds. Check the selected port, firmware and hub bootstrap.\n", 1));
+	return (error("No valid reply within 3 seconds, check the selected port, firmware and USB connection\n", 1));
 }
 
 #else

@@ -26,6 +26,6 @@ bool wacca_i2c_set_speed(enum wacca_i2c_bus bus, uint32_t hz);
 // External shorts cannot be cleared here
 bool wacca_i2c_begin(enum wacca_i2c_bus bus, uint8_t address, const uint8_t *tx, size_t tx_length, uint8_t *rx, size_t rx_length);
 enum wacca_i2c_status wacca_i2c_poll(enum wacca_i2c_bus bus);
-// Blocking convenience API for hub bootstrap; services both buses while waiting
+// Blocking convenience API; services both buses while waiting
 bool wacca_i2c_transfer(enum wacca_i2c_bus bus, uint8_t address, const uint8_t *tx, size_t tx_length, uint8_t *rx, size_t rx_length);
 #endif
